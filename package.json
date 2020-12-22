@@ -1,0 +1,27 @@
+{
+  "name": "shpg-card",
+  "version": "1.1.0",
+  "description": "Code for my online business card as an NPM package",
+  "main": "index.js",
+  "bin": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shpatrickguo/shpg-npm-card.git"
+  },
+  "keywords": [],
+  "author": "Patrick Guo",
+  "license": "ISC",
+  "dependencies": {
+    "boxen": "^4.2.0",
+    "chalk": "^4.1.0",
+    "fs": "0.0.1-security",
+    "path": "^0.12.7"
+  },
+  "bugs": {
+    "url": "https://github.com/shpatrickguo/shpg-npm-card/issues"
+  },
+  "homepage": "https://github.com/shpatrickguo/shpg-npm-card#readme"
+}
