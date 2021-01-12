@@ -11,7 +11,6 @@ Make sure to have [Node](https://www.npmjs.com/get-npm) installed.
 ```
 
 ### Inspired by (Go and check them out!):
-- [Anmol Pratap Singh](https://github.com/anmol098/npx_card)
 - [Tierney Cyren](https://github.com/bnb/bitandbang)
 - [oschvr](https://github.com/oschvr/card)
 - [Thanh Tran](https://github.com/trongthanh/npx-card)
