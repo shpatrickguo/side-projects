@@ -5,4 +5,4 @@ Programming side projects.
 
 ## [NPM business card](https://github.com/shpatrickguo/side-projects/tree/main/NPM%20business%20card)
 
-## [Sass Website]()
+## [Sass Website](https://github.com/shpatrickguo/side-projects/tree/main/Sass%20Website)
