@@ -1,5 +1,5 @@
 
-## Online business card  published on NPM
+# Online business card  published on NPM
 - Tutorial by [oschvr](https://oschvr.com/posts/create-your-npm-card/)
 
 ## How to run it on your local machine!
