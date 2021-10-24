@@ -1,6 +1,6 @@
 # side-projects
 Programming side projects.
 
-## NPM business card
+## [NPM CV](https://github.com/shpatrickguo/side-projects/tree/main/NPM%20CV)
 
-## NPM CV
+## NPM business card
