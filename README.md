@@ -11,4 +11,4 @@ Skill: Node.js and deploy on npm
 Skill: Python
 
 ## [Sass Website](https://github.com/shpatrickguo/side-projects/tree/main/Sass%20Website)
-Skill: Sass
+Skill: Sass, Bootstrap
