@@ -12,6 +12,3 @@ Skill: Python
 
 ## [Sass Website](https://github.com/shpatrickguo/side-projects/tree/main/Sass%20Website)
 Skill: Sass, Bootstrap
-
-## [Web 3.0 App]()
-Skills: Web 3.0 methodologies, Solidity and Metamask
