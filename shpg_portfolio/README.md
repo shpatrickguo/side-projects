@@ -9,5 +9,5 @@ sanity init --coupon javascriptmastery2022
 ## Dependencies
 
 ```
-npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons
+npm install @sanity/client @sanity/image-url framer-motion node-sass react-icons react-tooltip
 ```
