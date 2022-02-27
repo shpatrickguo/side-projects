@@ -1,7 +1,9 @@
 # hoRNG-discordbot
+
 Discord bot for hoRNG server.
 
-# Installations
+## Installations
+
 ```
 npm i dotenv
 npm i discord.js
@@ -12,7 +14,8 @@ npm i weather-js
 ```
 [FFmpeg](https://ffmpeg.org/download.html)
 
-# Features
+## Features
+
 Prefix: !
 Commands include aliases
 - !avatar: Display Avatar
@@ -36,8 +39,7 @@ Requires permissions
 - !unmute @USER: Unmutes @user
 - !reaction_rules: Sends an embed that assigns role from reaction
 
+## Adapted and Inspired from
 
-
-# Adapted and Inspired from
 - [FreeCodeCamp](https://www.freecodecamp.org/news/create-a-discord-bot-with-python/)
 - [CodeLyon](https://www.youtube.com/watch?v=j_sD9udZnCk&ab_channel=CodeLyon)
