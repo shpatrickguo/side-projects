@@ -30,4 +30,4 @@ def cipher(t, sol, last):
             else:
                 sol = ""
     print(sol)
-cipher(t, sol, last)
+print(cipher(t, sol, last))
