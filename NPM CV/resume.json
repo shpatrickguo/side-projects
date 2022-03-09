@@ -2,32 +2,28 @@
     "Education": [
       "Bachelor of Arts in Data Science: University of California, Berkeley. Aug 2017 - May 2021"
     ],
-    "Relevant Experience":[
-      "Data Science Intern at DaanMatch - Feb 2021 - Ongoing", 
+    "Experience":[
+      "Chief Data Officer at DaanMatch PBC - Feb 2021 - Ongoing", 
+      "Data Scientist at NeuralMatrix LLC - Aug 2021 - Ongoing",
       "Full stack developer at IPTE - Aug 2020 - Ongoing", 
       "Academic Intern for Computer Science at Univeristy of California, Berkeley - Summer 2018"
     ],
     "Tech Skills": [
-      "Python (NumPy, Pandas, SciKit-learn, Matplotlib, Seaborn, Django)",
-      "R, GIS, Java",
-      "HTML, CSS, Javascript",
-      "Node.js, Discord.js",
-      "SQL (SQLite3, MongoDB)",
-      "Time Series Forecasting",
-      "Git and version control",
-      "AWS, IBM Watson, Azure"
+      "Programming Languages: Python, SQL, R, Java",
+      "Data Science: Data Analytics, Data Mining, Machine Learning, Time Series, Neural Networks, Database", 
+      "Tools: AWS, MySQL, DynamoDB, Tableau, Excel, Django, Git"
     ],
     "Projects": [
       "Game Theory and Behavioral Economics - Explore game theory and behavioral economics on how webcam placement influences perception and social coordination", 
       "The Cobb-Douglas Production Function - Applying Cobb-Douglas Production Function to understand the different ways countries produce output or GDP",
       "Airbnb - Analyze effect of occupancy taxes on the short-term rental market enacted by Massachusetts state legislature on July 1st, 2019",
       "Food Trucks Operation Location - using machine learning to recommend food truck operation locations in San Francisco during Covid-19",
-      "IPTE - full stack development of an ecylopedia about transporation logistics",
+      "IPTE - full stack development of an encyclopedia about transportation logistics",
       "Covid forecast - time series analysis report used to forecast new covid cases in the next 10 days",
       "Ham/Spam - create a classifier that can distinguish spam from ham emails",
-      "Food safety - investigate restaurant food safety scores for restaurants in San Francisc",
+      "Food safety - investigate restaurant food safety scores for restaurants in San Francisco",
       "Gitlet - implement a version-control system that mimics Git",
-      "Tablut - build the tablut game",
+      "Tablut - build the Tablut game",
       "Signpost - recreate Simon Tathma's Signpost puzzle game",
       "BYoW - design and implement a 2D tile-based word exploration engine",
       "Bear Maps - build and host a web mapping application that provides street directions from a given start and destination",
@@ -36,21 +32,21 @@
       "NBody Simulation -  write a program simulating the motion of N objects in a plane, accounting for the gravitational forces", 
       "Fun with Graphs - write a library package to provide facilities for manipulating graphs, plus two clients that use the package",
       "Amazons - create an AI to play the game of Amazons with the player",
-      "The Enigma - decrypt a progressive substituion cypher by creating an enigma machine using OOP",
+      "The Enigma - decrypt a progressive substitution cypher by creating an enigma machine using OOP",
       "Galaxies - recreate Simon Tatham's Galaxies puzzle game using model-view-controller design pattern", 
       "Scheme Interpreter -  develop an interpreter for a subset of the Scheme language",
       "Ants Vs. SomeBees - create a tower defense game called Ants Vs. SomeBees using functional and object-oriented programming paradigms",
       "Yelp Maps - create a visualization of restaurant ratings using machine learning and the Yelp academic dataset",
       "The Game of Hog - develop a simulator and multiple strategies for the dice game Hog using control statements and higher-order functions", 
       "Classifying Movies - build and test a k-nearest-neighbors classifier",
-      "Crime & Puninshment - implement and interpret a sign test",
+      "Crime & Punishment - implement and interpret a sign test",
       "World Progress - use data visualization and table manipulation"
 
     ],
     "Contact": [
       "https://www.linkedin.com/in/patrickguo/",
       "https://github.com/shpatrickguo",
-      "patrickguo@berkeley.edu"
+      "shpatrickguo@gmail.com"
     ]
   }
 
