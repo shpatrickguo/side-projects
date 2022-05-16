@@ -1,6 +1,6 @@
 # hoRNG-discordbot
 
-Discord bot for hoRNG server.
+Discord bot with chat commands.
 
 ## Installations
 
