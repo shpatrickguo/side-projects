@@ -1,5 +1,5 @@
 # SASS Portfolio
-Portfolio made with bootstrap and SASS. Following tutorial by [freeCodeCamp.org](https://www.youtube.com/watch?v=iJKCj8uAHz8&t=1541s)
+Template website made with bootstrap and SASS. Following tutorial by [freeCodeCamp.org](https://www.youtube.com/watch?v=iJKCj8uAHz8&t=1541s)
 
 # Development
 ```
