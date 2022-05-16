@@ -1,6 +1,6 @@
 # [pythonchallenge](http://www.pythonchallenge.com/)
 
-This repository stores my approach to the fun Python Challenge by Nadav Samet. There will be spoilers, so I high encourage you to try out the game before moving ahead. Note: these are for educational purposes may not be the most efficient solution, you can reference the official solutions page for alternative/better approaches.
+This repository stores my approach to the fun Python Challenge by Nadav Samet. There will be spoilers, so I high encourage you to try out the game before moving ahead. Note: these are for educational purposes may not be the only solution, you can reference the official solutions page for alternative approaches.
 
 ## About the Challenge
 
