@@ -4,7 +4,7 @@ Discord bot with chat commands.
 
 ## Installations
 
-```
+``` bash
 npm i dotenv
 npm i discord.js
 npm i fs
@@ -31,7 +31,8 @@ Commands include aliases
 - !suggestions TEXT: Sends an embed of user suggestion with reactions
 - !weather LOCATION: sends weather of location
 
-Requires permissions
+Requires permissions:
+
 - !ban @USER: Bans @user
 - !kick @USER: Kicks @user
 - !mute @USER: Mutes @user
