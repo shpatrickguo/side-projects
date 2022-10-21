@@ -216,32 +216,32 @@ def view_random_image(target_dir, target_class):
   return img
 
 # Plot the validation and training data separately
-def plot_loss_curves(history):
-  """
-  Returns separate loss curves for training and validation metrics.
-  """ 
-  loss = history.history['loss']
-  val_loss = history.history['val_loss']
+def plot_loss_curves(history, metric):
+    """
+    Returns separate loss curves for training and validation metrics.
+    """ 
+    loss = history.history['loss']
+    val_loss = history.history['val_loss']
 
-  accuracy = history.history['accuracy']
-  val_accuracy = history.history['val_accuracy']
+    accuracy = history.history[metric]
+    val_accuracy = history.history[f'val_{metric}']
 
-  epochs = range(len(history.history['loss']))
+    epochs = range(len(history.history['loss']))
 
-  # Plot loss
-  plt.plot(epochs, loss, label='training_loss')
-  plt.plot(epochs, val_loss, label='val_loss')
-  plt.title('Loss')
-  plt.xlabel('Epochs')
-  plt.legend()
-
-  # Plot accuracy
-  plt.figure()
-  plt.plot(epochs, accuracy, label='training_accuracy')
-  plt.plot(epochs, val_accuracy, label='val_accuracy')
-  plt.title('Accuracy')
-  plt.xlabel('Epochs')
-  plt.legend()
+    # Plot loss
+    plt.plot(epochs, loss, label='training_loss')
+    plt.plot(epochs, val_loss, label='val_loss')
+    plt.title('Loss')
+    plt.xlabel('Epochs')
+    plt.legend()
+    
+    # Plot metric
+    plt.figure()
+    plt.plot(epochs, accuracy, label=f'training_{metric}')
+    plt.plot(epochs, val_accuracy, label=f'val_{metric}')
+    plt.title(f'{metric}')
+    plt.xlabel('Epochs')
+    plt.legend()
 
 # Create a function to import an image and resize it to be able to be used with our model
 def load_and_prep_image(filename, img_shape=224):
