@@ -218,6 +218,7 @@ def view_random_image(target_dir, target_class):
 # Plot the validation and training data separately
 def plot_loss_curves(history, metric):
     """
+    metric: str
     Returns separate loss curves for training and validation metrics.
     """ 
     loss = history.history['loss']
