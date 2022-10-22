@@ -26,7 +26,7 @@ def plot_predictions(train_data=X_train,
 
 def mae(y_test, y_pred):
   """
-  Calculuates mean absolute error between y_test and y_preds.
+  Calculates mean absolute error between y_test and y_preds.
   """
   return tf.metrics.mean_absolute_error(y_test,
                                         y_pred)
@@ -62,11 +62,11 @@ def plot_decision_boundary(model, X, y):
 
   # Check for multi-class
   if model.output_shape[-1] > 1: # checks the final dimension of the model's output shape, if this is > (greater than) 1, it's multi-class 
-    print("doing multiclass classification...")
+    print("doing multi-class classification...")
     # We have to reshape our predictions to get them ready for plotting
     y_pred = np.argmax(y_pred, axis=1).reshape(xx.shape)
   else:
-    print("doing binary classifcation...")
+    print("doing binary classification...")
     y_pred = np.round(np.max(y_pred, axis=1)).reshape(xx.shape)
   
   # Plot decision boundary
