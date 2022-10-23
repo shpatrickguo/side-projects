@@ -1,10 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import tensorflow as tf
-import itertools
-from sklearn.metrics import confusion_matrix
-import random
 import matplotlib.image as mpimg
+import random
+import itertools
+import sklearn.metrics as metrics
+from sklearn.metrics import confusion_matrix
+import tensorflow as tf
+
 
 def plot_predictions(train_data=X_train, 
                      train_labels=y_train, 
@@ -40,6 +42,22 @@ def mse(y_test, y_pred):
 # Note: The following confusion matrix code is a remix of Scikit-Learn's 
 # plot_confusion_matrix function - https://scikit-learn.org/stable/modules/generated/sklearn.metrics.plot_confusion_matrix.html
 # and Made with ML's introductory notebook - https://github.com/GokuMohandas/MadeWithML/blob/main/notebooks/08_Neural_Networks.ipynb
+
+def regression_results(y_true, y_pred):
+    # Regression metrics
+    explained_variance=metrics.explained_variance_score(y_true, y_pred)
+    mean_absolute_error=metrics.mean_absolute_error(y_true, y_pred) 
+    mse=metrics.mean_squared_error(y_true, y_pred) 
+    mean_squared_log_error=metrics.mean_squared_log_error(y_true, y_pred)
+    median_absolute_error=metrics.median_absolute_error(y_true, y_pred)
+    r2=metrics.r2_score(y_true, y_pred)
+
+    print('explained_variance: ', round(explained_variance,4))    
+    print('mean_squared_log_error: ', round(mean_squared_log_error,4))
+    print('r2: ', round(r2,4))
+    print('MAE: ', round(mean_absolute_error,4))
+    print('MSE: ', round(mse,4))
+    print('RMSE: ', round(np.sqrt(mse),4))
 
 def plot_decision_boundary(model, X, y):
   """
