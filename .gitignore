@@ -10,3 +10,5 @@ GameStop.sql
 twitter/.env
 *.jpg
 *.png
+*.xml
+*.iml

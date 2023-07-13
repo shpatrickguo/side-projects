@@ -6,7 +6,6 @@ import cv2
 import imghdr
 # Data handling
 import pandas as pd
-import numpy as np
 # Filesystem
 import os
 # Text processing
