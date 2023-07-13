@@ -12,3 +12,4 @@ twitter/.env
 *.png
 *.xml
 *.iml
+.DS_Store

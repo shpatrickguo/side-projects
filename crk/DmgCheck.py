@@ -1,18 +1,14 @@
 # Imports
-# Image handling
-from PIL import Image
 from PIL import Image, ImageFilter
 import cv2
 import imghdr
-# Data handling
 import pandas as pd
-# Filesystem
-import os
-# Text processing
+import os, logging
 import pytesseract
 import re
-# Dates
 from datetime import datetime
+
+logging.info("Starting dmgCheck.py") 
 
 # Set of allowed image formats
 IMAGE_FORMATS = {'png', 'jpg', 'jpeg'}
@@ -65,9 +61,12 @@ for folder_name in os.listdir(main_folder):
 
         # Extract damage
         damage = re.search(r'Total Damage: (\d{1,3}(,\d{3})*)', text).group(1)
+        # Remove commas and convert to integer
+        damage = int(damage.replace(",", ""))
 
         # Extract boss name
         boss = re.search(r'(Living Abyss|Red Velvet Dragon|Avatar of Destiny)', text).group(1)
+
 
         # Get image upload date
         upload_time = os.path.getmtime(image_path)
