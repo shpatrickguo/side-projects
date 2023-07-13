@@ -1,7 +1,5 @@
 # Imports
 from PIL import Image, ImageFilter
-import cv2
-import imghdr
 import pandas as pd
 import os, logging
 import pytesseract
@@ -18,7 +16,7 @@ def ocr_image(image_path, kernel_size=1):
 
     # Validate image file
     ext = os.path.splitext(image_path)[1].lower()
-    if ext[1:] not in IMAGE_FORMATS and imghdr.what(image_path) not in IMAGE_FORMATS:
+    if ext[1:] not in IMAGE_FORMATS:
         return None
 
     # Load image
