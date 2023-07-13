@@ -1,4 +1,4 @@
-from PIL import Image, ImageFilter
+from PIL import Image, ImageFilter, ImageEnhance
 import cv2
 import imghdr
 import pandas as pd
@@ -55,7 +55,7 @@ def slice_video_on_profile_change(video_path, output_folder, threshold=100):
     cap.release()
 
 
-def ocr_image(image_path, kernel_size=1):
+def ocr_image(image_path, kernel_size=1, contrast_factor=2):
 
     # Validate image file
     ext = os.path.splitext(image_path)[1].lower()
@@ -67,20 +67,21 @@ def ocr_image(image_path, kernel_size=1):
 
     # Convert to grayscale    
     gray = image.convert('L')
-
+    # Increase contrast
+    enhancer = ImageEnhance.Contrast(gray)
+    contrast = enhancer.enhance(contrast_factor)
+    
     # Apply gaussian blur to remove noise
-    blur = gray.filter(ImageFilter.GaussianBlur(radius=kernel_size))
+    blur = contrast.filter(ImageFilter.GaussianBlur(radius=kernel_size))
 
     # Perform OCR
     text = pytesseract.image_to_string(blur)
 
     return text
 
+slice_video_on_profile_change('Final.mov', 'relicDonations')
 
-
-slice_video_on_profile_change('Final.mov', 'donations')
-
-folder = 'donations/'
+folder = 'relicDonations/'
 
 for filename in os.listdir(folder):
     image_path = os.path.join(folder, filename)
@@ -102,19 +103,25 @@ for filename in os.listdir(folder):
     # Extract data from image 
     text = ocr_image(image_path)
     
-    username = username = text.split("\n", 1)[0]
-    points = int(re.search(r'(\d+)\n*$', text).group(1))
+    username = re.search(r'([\w]+)(?=\n)', text).group(1)
+    # Get last number
+    points = text.split(" ")[-1]
+    # Remove non-digits
+    points = int(re.sub(r'[^\d]', '', points))
     date = datetime.fromtimestamp(os.path.getmtime(image_path)).date()
-
 
     # Create new row
     new_row = {
         'IGN': username,
-       'Relic Donation Points': points,
-        'Date': date
+        'Relic Donation Points': points,
+        'Date': date,
+        'File': image_path
     }
     # Append row to dataframe
     df = df.append(new_row, ignore_index=True)
 
     # Drop duplicates
     df = df.drop_duplicates()
+    
+# Export to CSV
+df.to_csv('relicDonations.csv', index=False)
