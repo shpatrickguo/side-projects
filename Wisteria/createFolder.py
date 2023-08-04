@@ -1,5 +1,8 @@
 import os
 
+# NOTE usernames are outdated
+# TODO: Connect with Google Sheets to get latest usernames
+
 usernames = """
 Acebites  
 BigBoyChaddy

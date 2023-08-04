@@ -1,19 +1,4 @@
-"""
-Instructions:
-
-Drag screenshots of user into their directory then run the code.
-
-```
-dmgCheck
-└───username1
-│   │   screenshot1.png
-│   │   screenshot2.png
-└───username2
-│   │   screenshot1.png
-│   │   screenshot2.png
-```
-
-"""
+# TODO: Connect with extractDmgCheckChat.py so that we don't need to drag photos into their folders anymore
 
 # Imports
 from PIL import Image, ImageFilter
