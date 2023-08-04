@@ -9,6 +9,9 @@ from datetime import datetime
 
 logging.info("Starting dmgCheck.py")
 
+# Global Variables
+SEASON = "S3-4"
+
 main_folder = 'bossDmg'
 
 # Set of allowed image formats
@@ -77,7 +80,8 @@ for folder_name in os.listdir(main_folder):
             'IGN': folder_name,
             'Boss': boss,
             'Damage': damage,
-            'Date': upload_date
+            #'Date': upload_date
+            'Season': SEASON
         }
 
         # Create dataframe from this row
@@ -88,8 +92,38 @@ for folder_name in os.listdir(main_folder):
         # Drop duplicates
         df = df.drop_duplicates()
 
-# Export dataframe
+# Get unique IGN, Boss combinations
+ign_boss = df[['IGN', 'Boss']].drop_duplicates()
+
+# Merge to get max damage for each combination
+df = ign_boss.merge(df.groupby(['IGN', 'Boss'])['Damage'].max(),
+                        on=['IGN', 'Boss'])
+
+# Split dataframe for each boss
+
+# Get unique Boss names
+bosses = df['Boss'].unique()
+
+# Initialize dictionary to store dataframes
+boss_dfs = {}
+
+for boss in bosses:
+
+    # Filter rows only for this Boss
+    boss_df = df[df['Boss'] == boss]
+
+    # Add to dictionary with Boss name as key
+    boss_dfs[boss] = boss_df
+
+dmgCheckLA = boss_dfs['Living Abyss']
+dmgCheckRVD = boss_dfs['Red Velvet Dragon']
+#dmgCheckAoD = boss_dfs['Avatar of Destiny']
+
+# Locate export directory
 if not os.path.exists('report'):
     os.mkdir('report')
+
 # Export to CSV
-df.to_csv('report/dmgCheck.csv', index=False)
+dmgCheckLA.to_csv('report/dmgCheckLA.csv', index=False)
+dmgCheckRVD.to_csv('report/dmgCheckRVD.csv', index=False)
+#dmgCheckAoD.to_csv('report/dmgCheckAoD.csv', index=False)
