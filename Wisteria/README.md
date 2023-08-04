@@ -7,6 +7,8 @@ Aimed to help guilds manage their members guild battle damage in Cookie Run King
 Drag screenshots of user into their directory then run `dmgCheck.py`.
 Output should be `.csv` files in  `report/`
 
+Remember to update the SEASON variable
+
 ```
 dmgCheck
 └───username1

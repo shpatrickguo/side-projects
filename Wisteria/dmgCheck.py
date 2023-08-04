@@ -118,14 +118,15 @@ dmgCheckLA = boss_dfs['Living Abyss']
 dmgCheckRVD = boss_dfs['Red Velvet Dragon']
 #dmgCheckAoD = boss_dfs['Avatar of Destiny']
 
-#print(dmgCheckLA)
-#print(dmgCheckRVD)
+dmgCheckLA = dmgCheckLA[['IGN', 'Damage', 'Season']]
+dmgCheckRVD = dmgCheckRVD[['IGN', 'Damage', 'Season']]
+#dmgCheckAoD = dmgCheckAoD[['IGN', 'Damage', 'Season']]
 
 # Locate export directory
 if not os.path.exists('report'):
     os.mkdir('report')
 
 # Export to CSV
-dmgCheckLA.to_csv('report/dmgCheckLA.csv', index=False)
-dmgCheckRVD.to_csv('report/dmgCheckRVD.csv', index=False)
-#dmgCheckAoD.to_csv('report/dmgCheckAoD.csv', index=False)
+dmgCheckLA.to_csv('report/dmgCheckLA.csv', index=False, header=False)
+dmgCheckRVD.to_csv('report/dmgCheckRVD.csv', index=False, header=False)
+#dmgCheckAoD.to_csv('report/dmgCheckAoD.csv', index=False, header=False)
