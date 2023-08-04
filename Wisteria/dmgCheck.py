@@ -1,3 +1,9 @@
+"""
+Instructions:
+
+
+"""
+
 # Imports
 from PIL import Image, ImageFilter
 import pandas as pd
@@ -41,7 +47,7 @@ def ocr_image(img_path, kernel_size=1):
 
 
 # Create empty dataframe
-df = pd.DataFrame(columns=['IGN', 'Boss', 'Damage', 'Date'])
+df = pd.DataFrame(columns=['Boss', 'IGN', 'Damage', 'Season'])
 
 # Loop through all sub-folders
 for folder_name in os.listdir(main_folder):
@@ -72,34 +78,31 @@ for folder_name in os.listdir(main_folder):
         boss = re.search(r'(Living Abyss|Red Velvet Dragon|Avatar of Destiny)', text).group(1)
 
         # Get image upload date
-        upload_time = os.path.getmtime(image_path)
-        upload_date = datetime.fromtimestamp(upload_time).date()
-
-        # Create new row
-        new_row = {
-            'IGN': folder_name,
-            'Boss': boss,
-            'Damage': damage,
-            #'Date': upload_date
-            'Season': SEASON
-        }
+        #upload_time = os.path.getmtime(image_path)
+        #upload_date = datetime.fromtimestamp(upload_time).date()
 
         # Create dataframe from this row
-        row_df = pd.DataFrame([[folder_name, boss, damage, upload_date]], columns=['IGN', 'Boss', 'Damage', 'Date'])
+        row_df = pd.DataFrame([[boss, folder_name, damage, SEASON]], columns=['Boss', 'IGN', 'Damage', 'Season'])
 
         # Concatenate dataframes
         df = pd.concat([df, row_df], ignore_index=True)
-        # Drop duplicates
-        df = df.drop_duplicates()
 
-# Get unique IGN, Boss combinations
-ign_boss = df[['IGN', 'Boss']].drop_duplicates()
+# Group by Boss and IGN
+grouped = df.groupby(['Boss', 'IGN'])
 
-# Merge to get max damage for each combination
-df = ign_boss.merge(df.groupby(['IGN', 'Boss'])['Damage'].max(),
-                        on=['IGN', 'Boss'])
+# Get max damage
+max_dmg = grouped['Damage'].max().reset_index()
 
-# Split dataframe for each boss
+# Merge to get Season
+merged = pd.merge(max_dmg, df[['Boss', 'IGN', 'Season']], on=['Boss', 'IGN'])
+
+# Reorder columns
+df = merged[['Boss', 'IGN', 'Damage', 'Season']]
+
+# Drop duplicates
+df = df.drop_duplicates()
+
+print(df)
 
 # Get unique Boss names
 bosses = df['Boss'].unique()
@@ -118,6 +121,9 @@ for boss in bosses:
 dmgCheckLA = boss_dfs['Living Abyss']
 dmgCheckRVD = boss_dfs['Red Velvet Dragon']
 #dmgCheckAoD = boss_dfs['Avatar of Destiny']
+
+#print(dmgCheckLA)
+#print(dmgCheckRVD)
 
 # Locate export directory
 if not os.path.exists('report'):
