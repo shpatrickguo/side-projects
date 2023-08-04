@@ -1,6 +1,17 @@
 """
 Instructions:
 
+Drag screenshots of user into their directory then run the code.
+
+```
+dmgCheck
+└───username1
+│   │   screenshot1.png
+│   │   screenshot2.png
+└───username2
+│   │   screenshot1.png
+│   │   screenshot2.png
+```
 
 """
 
