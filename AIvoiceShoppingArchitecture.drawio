@@ -1,9 +1,12 @@
-<mxfile host="app.diagrams.net" modified="2024-02-24T03:03:25.606Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" version="23.1.6" etag="T6daiFym8LwUcNdJCwqE" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-24T03:04:18.409Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15" etag="FMnZXugyAWbC-OaT3ZTu" version="23.1.6" type="github">
   <diagram name="Page-1" id="mxUbVPvC9f61Po6Z0gtP">
-    <mxGraphModel>
+    <mxGraphModel dx="1083" dy="753" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="ob2jQqNxLkis66Fb6P0S-1" value="AI System Architecture for Voice-Activated Shopping" style="text;strokeColor=none;fillColor=none;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" vertex="1" parent="1">
+          <mxGeometry x="-24" y="-305" width="443" height="25" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
