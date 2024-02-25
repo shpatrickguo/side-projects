@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-02-25T23:09:58.806Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="AZvnqLQ6NyZXMBA4st_P" version="23.1.6" type="github">
+<mxfile host="app.diagrams.net" modified="2024-02-25T23:29:46.885Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" etag="HAcGnW6xqRw930vj32rP" version="23.1.6" type="github">
   <diagram name="Draft 1" id="ZrdwXDP2YWiD1Us1WPxH">
     <mxGraphModel dx="1645" dy="1600" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -22,16 +22,16 @@
         <mxCell id="10" value="Delivery" style="whiteSpace=wrap;strokeWidth=2;fontSize=11;" parent="1" vertex="1">
           <mxGeometry x="1338" y="115" width="74" height="34" as="geometry" />
         </mxCell>
-        <mxCell id="11" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.75;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=11;" parent="1" source="M5u9frMeLvFPCN_YoxES-26" target="M5u9frMeLvFPCN_YoxES-39" edge="1">
+        <mxCell id="11" value="" style="curved=1;startArrow=none;endArrow=block;exitX=0.75;exitY=0.75;exitDx=0;exitDy=0;exitPerimeter=0;fontSize=11;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="M5u9frMeLvFPCN_YoxES-26" target="M5u9frMeLvFPCN_YoxES-38" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points" />
             <mxPoint x="-53" y="90.0700795228629" as="sourcePoint" />
-            <mxPoint x="90" y="90" as="targetPoint" />
+            <mxPoint x="28" y="-220" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="M5u9frMeLvFPCN_YoxES-27" value="Voice Input" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=11;" vertex="1" connectable="0" parent="11">
           <mxGeometry x="0.3" y="4" relative="1" as="geometry">
-            <mxPoint x="-53" y="6" as="offset" />
+            <mxPoint x="-8" y="2" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="12" value="" style="curved=1;startArrow=none;endArrow=block;exitX=1.0002200704225352;exitY=0.5020680147058824;entryX=0.00017361111111111112;entryY=0.500390625;fontSize=11;" parent="1" target="4" edge="1">
@@ -92,11 +92,11 @@
           <mxGeometry x="650" y="89" width="60" height="60" as="geometry" />
         </mxCell>
         <mxCell id="M5u9frMeLvFPCN_YoxES-26" value="&lt;br style=&quot;font-size: 11px;&quot;&gt;&lt;br style=&quot;font-size: 11px;&quot;&gt;User" style="shape=actor;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
-          <mxGeometry x="-150" y="-260" width="40" height="60" as="geometry" />
+          <mxGeometry x="-190" y="-180" width="40" height="60" as="geometry" />
         </mxCell>
         <mxCell id="M5u9frMeLvFPCN_YoxES-38" value="Speech Recognition Module" style="swimlane;startSize=20;horizontal=1;childLayout=flowLayout;flowOrientation=north;resizable=1;interRankCellSpacing=50;containerType=tree;fontSize=11;rotation=0;rounded=0;direction=east;movable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
           <mxGeometry x="-40" y="-280" width="188" height="280" as="geometry">
-            <mxRectangle x="10" y="-280" width="270" height="60" as="alternateBounds" />
+            <mxRectangle x="-40" y="-280" width="270" height="60" as="alternateBounds" />
           </mxGeometry>
         </mxCell>
         <mxCell id="M5u9frMeLvFPCN_YoxES-39" value="Audio Processing" style="whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="M5u9frMeLvFPCN_YoxES-38">
