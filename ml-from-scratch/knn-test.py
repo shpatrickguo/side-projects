@@ -12,3 +12,11 @@ X_train, X_test, y_train, y_test = train_test__split(X, y, test_size=0.2, random
 
 print(X_train.shape)
 print(X_train[0])
+
+from knn import KNN
+clf = KNN(k=3)
+clf.fit(X_train, y_train)
+predictions = clf.predict(X_test)
+
+acc = np.sum(predictions == y_test) / len(y_test)
+print(acc)
