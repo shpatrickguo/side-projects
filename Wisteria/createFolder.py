@@ -1,3 +1,18 @@
+"""
+createFolder.py - Guild Member Folder Creator
+
+This utility creates individual folders for each guild member to organize
+their damage screenshots.
+
+Usage:
+    1. Update the usernames list with current guild member names
+    2. Run: python createFolder.py
+    3. Folders will be created in the current directory
+
+NOTE: Usernames are outdated
+TODO: Connect with Google Sheets to get latest usernames
+"""
+
 import os
 
 # NOTE usernames are outdated
