@@ -1,9 +1,10 @@
 {
   "name": "horng-discordbot",
-  "version": "1.0.0",
-  "description": "Discord bot for hoRNG server",
+  "version": "2.0.0",
+  "description": "Discord bot for hoRNG server - Updated to Discord.js v14",
   "main": "main.js",
   "scripts": {
+    "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,16 +22,16 @@
   },
   "homepage": "https://github.com/shpatrickguo/hoRNG-discordbot#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.4.0",
-    "discord.js": "^12.5.1",
-    "dotenv": "^8.2.0",
-    "ffmpeg-static": "^4.2.7",
-    "i": "^0.3.6",
+    "@discordjs/opus": "^0.9.0",
+    "@discordjs/voice": "^0.16.0",
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.2.0",
+    "libsodium-wrappers": "^0.7.11",
     "ms": "^2.1.3",
-    "npm": "^7.5.6",
-    "quick.db": "^7.1.3",
+    "quick.db": "^9.1.7",
     "weather-js": "^2.0.0",
-    "yt-search": "^2.7.3",
-    "ytdl-core": "^4.4.5"
+    "yt-search": "^2.10.4",
+    "ytdl-core": "^4.11.5"
   }
 }

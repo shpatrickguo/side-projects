@@ -1,43 +1,39 @@
 const ms = require("ms");
+const { PermissionFlagsBits } = require('discord.js');
 
 module.exports = {
   name: "mute",
-  permissions: ["MUTE_MEMBERS"],
-  description: "mutes a member",
-  execute(message, args, cmd, client, Discord) {
-    if (message.member.roles.cache.has("810768729415483422")) {
-      const target = message.mentions.users.first();
-      if (target) {
-        let mainRole = message.guild.roles.cache.find(
-          (role) => role.name === "member"
-        );
-        let muteRole = message.guild.roles.cache.find(
-          (role) => role.name === "mute"
-        );
+  permissions: [PermissionFlagsBits.ModerateMembers],
+  description: "Timeout/mute a member",
+  async execute(message, args, cmd, client) {
+    // Check if user has moderate members permission
+    if (!message.member.permissions.has(PermissionFlagsBits.ModerateMembers)) {
+      return message.channel.send("You don't have permission to mute members.");
+    }
 
-        let memberTarget = message.guild.members.cache.get(target.id);
+    const target = message.mentions.users.first();
+    if (!target) {
+      return message.channel.send("Please mention a user to mute.");
+    }
 
-        if (!args[1]) {
-          memberTarget.roles.remove(mainRole.id);
-          memberTarget.roles.add(muteRole.id);
-          message.channel.send(`<@${memberTarget.user.id}> has been muted`);
-          return;
-        }
-        memberTarget.roles.remove(mainRole.id);
-        memberTarget.roles.add(muteRole.id);
-        message.channel.send(
-          `<@${memberTarget.user.id}> has been muted for ${ms(ms(args[1]))}`
-        );
+    const memberTarget = message.guild.members.cache.get(target.id);
+    if (!memberTarget) {
+      return message.channel.send("User not found in this server.");
+    }
 
-        setTimeout(function () {
-          memberTarget.roles.remove(muteRole.id);
-          memberTarget.roles.add(mainRole.id);
-        }, ms(args[1]));
+    try {
+      // Use Discord's timeout feature (Discord.js v14)
+      const duration = args[1] ? ms(args[1]) : ms('10m'); // Default 10 minutes
+      await memberTarget.timeout(duration, `Muted by ${message.author.tag}`);
+      
+      if (args[1]) {
+        message.channel.send(`<@${memberTarget.user.id}> has been muted for ${ms(duration)}`);
       } else {
-        message.channel.send("You couldn't mute the member");
+        message.channel.send(`<@${memberTarget.user.id}> has been muted for 10 minutes`);
       }
-    } else {
-      message.channel.send("You don't have permission to do that.");
+    } catch (err) {
+      console.error(err);
+      message.channel.send("Failed to mute the member. Make sure I have the necessary permissions.");
     }
   },
 };

@@ -1,37 +1,47 @@
 const weather = require("weather-js");
+const { EmbedBuilder } = require('discord.js');
 
 module.exports = {
   name: "weather",
   aliases: ["wthr"],
   permissions: [],
-  description: "returns the weather",
-  async execute(message, args, cmd, client, Discord) {
+  description: "Get current weather for a location",
+  async execute(message, args, cmd, client) {
+    if (!args[0]) {
+      return message.channel.send("Please specify a location");
+    }
+
     weather.find(
       { search: args.join(" "), degreeType: "C" },
       function (error, result) {
-        // 'C' can be changed to 'F' for farneheit results
-        if (error) return message.channel.send(error);
-        if (!args[0]) return message.channel.send("Please specify a location");
+        if (error) {
+          console.error(error);
+          return message.channel.send("Error fetching weather data");
+        }
 
-        if (result === undefined || result.length === 0)
-          return message.channel.send("**Invalid** location");
+        if (result === undefined || result.length === 0) {
+          return message.channel.send("**Invalid** location. Please try again.");
+        }
 
-        var current = result[0].current;
-        var location = result[0].location;
+        const current = result[0].current;
+        const location = result[0].location;
 
-        const weatherinfo = new Discord.MessageEmbed()
+        const weatherinfo = new EmbedBuilder()
           .setDescription(`**${current.skytext}**`)
-          .setAuthor(`Weather forecast for ${current.observationpoint}`)
+          .setAuthor({ name: `Weather forecast for ${current.observationpoint}` })
           .setThumbnail(current.imageUrl)
-          .setColor(0x111111)
-          .addField("Timezone", `UTC${location.timezone}`, true)
-          .addField("Degree Type", "Celsius", true)
-          .addField("Temperature", `${current.temperature}°`, true)
-          .addField("Wind", current.winddisplay, true)
-          .addField("Feels like", `${current.feelslike}°`, true)
-          .addField("Humidity", `${current.humidity}%`, true);
+          .setColor(0x00AE86)
+          .addFields(
+            { name: "Timezone", value: `UTC${location.timezone}`, inline: true },
+            { name: "Degree Type", value: "Celsius", inline: true },
+            { name: "Temperature", value: `${current.temperature}°C`, inline: true },
+            { name: "Wind", value: current.winddisplay, inline: true },
+            { name: "Feels like", value: `${current.feelslike}°C`, inline: true },
+            { name: "Humidity", value: `${current.humidity}%`, inline: true }
+          )
+          .setTimestamp();
 
-        message.channel.send(weatherinfo);
+        message.channel.send({ embeds: [weatherinfo] });
       }
     );
   },
