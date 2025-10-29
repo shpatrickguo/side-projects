@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/shpatrickguo/hoRNG-discordbot#readme",
   "dependencies": {
-    "@discordjs/opus": "^0.9.0",
+    "@discordjs/opus": "^0.10.0",
     "@discordjs/voice": "^0.16.0",
     "discord.js": "^14.14.1",
     "dotenv": "^16.0.3",
