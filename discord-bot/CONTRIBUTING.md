@@ -29,7 +29,7 @@ const { EmbedBuilder, PermissionFlagsBits } = require('discord.js');
 module.exports = {
   name: "commandname",
   aliases: ["alias1", "alias2"],
-  permissions: [PermissionFlagsBits.PermissionName], // If required
+  permissions: [PermissionFlagsBits.ManageMessages], // If permissions are required
   description: "Command description",
   async execute(message, args, cmd, client) {
     // Command logic here
