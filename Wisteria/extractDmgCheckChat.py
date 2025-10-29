@@ -1,3 +1,19 @@
+"""
+extractDmgCheckChat.py - Discord Chat Export Processor
+
+This script processes exported Discord chat logs (HTML format) to extract
+damage screenshots and metadata from messages with specific reactions.
+
+Usage:
+    1. Export Discord chat to dmgCheckChat.html
+    2. Run: python extractDmgCheckChat.py
+    3. Check output in data/dmgCheckChat.csv
+
+Requirements:
+    - BeautifulSoup4 for HTML parsing
+    - Discord chat export in HTML format
+"""
+
 from bs4 import BeautifulSoup
 import pandas as pd
 

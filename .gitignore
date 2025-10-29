@@ -21,3 +21,6 @@ Wisteria/discordExport.txt
 *.csv
 .DS_Store
 *.icloud
+.idea/
+__pycache__/
+*.pyc

@@ -1,4 +1,18 @@
-# TODO: Connect with extractDmgCheckChat.py so that we don't need to drag photos into their folders anymore
+"""
+dmgCheck.py - Guild Battle Damage OCR Processor
+
+This script processes screenshots of guild battle damage from Cookie Run Kingdom.
+It uses OCR (Optical Character Recognition) to extract damage numbers from images
+and generates CSV reports organized by boss type.
+
+Usage:
+    1. Place user screenshots in bossDmg/<username>/ folders
+    2. Update the SEASON variable to match current season
+    3. Run: python dmgCheck.py
+    4. Check output CSV files in report/ directory
+
+TODO: Connect with extractDmgCheckChat.py so that we don't need to drag photos into their folders anymore
+"""
 
 # Imports
 from PIL import Image, ImageFilter
@@ -22,6 +36,21 @@ IMAGE_FORMATS = {'png', 'jpg', 'jpeg'}
 
 # Function for Optical Character Recognition
 def ocr_image(img_path, kernel_size=1):
+    """
+    Perform OCR on an image to extract text.
+    
+    Args:
+        img_path (str): Path to the image file
+        kernel_size (int): Gaussian blur kernel size for noise reduction (default: 1)
+        
+    Returns:
+        str: Extracted text from the image, or None if invalid image format
+        
+    Note:
+        - Image is converted to grayscale
+        - Gaussian blur is applied to reduce noise
+        - Only png, jpg, jpeg formats are supported
+    """
     # Validate image file
     ext = os.path.splitext(img_path)[1].lower()
     if ext[1:] not in IMAGE_FORMATS:
