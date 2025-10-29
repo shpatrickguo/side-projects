@@ -45,7 +45,8 @@ async function fetchHandler(request: Request): Promise<Response> {
   // POST /todos - Create a new todo
   if (url.pathname === "/todos" && request.method === "POST") {
     try {
-      const { todo } = await request.json();
+      const body = (await request.json()) as { todo?: unknown };
+      const { todo } = body;
       
       // Validate todo input
       if (!todo || typeof todo !== "string" || todo.trim() === "") {
