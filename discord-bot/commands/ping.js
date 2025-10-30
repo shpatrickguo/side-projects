@@ -1,15 +1,16 @@
+const { EmbedBuilder } = require('discord.js');
+
 module.exports = {
   name: "ping",
   permissions: [],
-  description: "this is a ping cmd",
-  execute(message, args, cmd, client, Discord) {
-    const embed = new Discord.MessageEmbed()
-      .setTitle("Bots ping")
-      .setColor("RANDOM").setDescription(`Latency is ${
-      Date.now() - message.createdTimestamp
-    }ms. 
-            API Latency is ${Math.round(client.ws.ping)}ms`);
+  description: "Check bot latency and API ping",
+  execute(message, args, cmd, client) {
+    const embed = new EmbedBuilder()
+      .setTitle("Bot's Ping")
+      .setColor(0x00FF00)
+      .setDescription(`Latency is ${Date.now() - message.createdTimestamp}ms. 
+API Latency is ${Math.round(client.ws.ping)}ms`);
 
-    message.channel.send(embed);
+    message.channel.send({ embeds: [embed] });
   },
 };

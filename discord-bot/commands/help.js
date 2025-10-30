@@ -1,29 +1,32 @@
+const { EmbedBuilder } = require('discord.js');
+
 module.exports = {
-  name: "help2",
-  aliases: ["commands"],
+  name: "help",
+  aliases: ["commands", "help2"],
   permissions: [],
-  description: "lists commands",
-  execute(message, args, cmd, client, Discord) {
-    const embed = new Discord.MessageEmbed()
-      .setColor("FADF2E")
+  description: "Lists all available commands",
+  execute(message, args, cmd, client) {
+    const embed = new EmbedBuilder()
+      .setColor(0xFADF2E)
       .setTitle("Commands")
       .addFields(
-        { name: "`play URL/KEYWORDs`", value: "plays audio from youtube" },
-        { name: "`pause`", value: "pauses current audio" },
-        { name: "`unpause`", value: "unpauses current audio" },
-        { name: "`skip`", value: "skips current audio" },
-        { name: "`stop`", value: "stops playing audio" },
-        { name: "`rules`", value: "server rules" },
-        { name: "`suggest SUGGESTION`", value: "make a suggestion" },
-        { name: "`ping`", value: "Latency check" },
-        { name: "`weather LOCATION`", value: "current weather at location" },
-        { name: "`avatar`", value: "returns profile pic" },
-        { name: "`clear`", value: "clears commands" }
+        { name: "`!play URL/KEYWORDS`", value: "Plays audio from YouTube", inline: false },
+        { name: "`!pause`", value: "Pauses current audio", inline: false },
+        { name: "`!unpause`", value: "Unpauses current audio", inline: false },
+        { name: "`!skip`", value: "Skips current audio", inline: false },
+        { name: "`!stop`", value: "Stops playing audio", inline: false },
+        { name: "`!rules`", value: "Display server rules", inline: false },
+        { name: "`!suggest SUGGESTION`", value: "Make a suggestion", inline: false },
+        { name: "`!ping`", value: "Check bot latency", inline: false },
+        { name: "`!weather LOCATION`", value: "Get current weather at location", inline: false },
+        { name: "`!avatar`", value: "Display your profile picture", inline: false },
+        { name: "`!clear NUMBER`", value: "Clear messages (requires permissions)", inline: false }
       )
-      .setFooter("Make sure to check the rules channel");
+      .setFooter({ text: "Make sure to check the rules channel" });
 
-    message.channel.send(embed).catch((err) => {
-      throw err;
+    message.channel.send({ embeds: [embed] }).catch((err) => {
+      console.error(err);
+      message.reply("Error sending help message.");
     });
   },
 };

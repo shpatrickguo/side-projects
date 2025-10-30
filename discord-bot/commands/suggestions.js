@@ -1,26 +1,35 @@
+const { EmbedBuilder } = require('discord.js');
+
 module.exports = {
   name: "suggestions",
-  aliases: ["suggest", "suggetion"],
+  aliases: ["suggest", "suggestion"],
   permissions: [],
-  description: "create a suggestion",
-  execute(message, args, cmd, client, Discord) {
-    let messageArgs = args.join(" ");
-    const embed = new Discord.MessageEmbed()
-      .setColor("FADF2E")
-      .setAuthor(
-        message.author.tag,
-        message.author.displayAvatarURL({ dynamic: true })
-      )
-      .setDescription(messageArgs);
-    message.channel
-      .send(embed)
-      .then((msg) => {
-        msg.react("👍");
-        msg.react("👎");
-        message.delete();
+  description: "Create a suggestion with voting reactions",
+  async execute(message, args, cmd, client) {
+    const messageArgs = args.join(" ");
+    
+    if (!messageArgs) {
+      return message.reply("Please provide a suggestion!");
+    }
+
+    const embed = new EmbedBuilder()
+      .setColor(0xFADF2E)
+      .setAuthor({ 
+        name: message.author.tag,
+        iconURL: message.author.displayAvatarURL({ dynamic: true })
       })
-      .catch((err) => {
-        throw err;
-      });
+      .setTitle("New Suggestion")
+      .setDescription(messageArgs)
+      .setTimestamp();
+
+    try {
+      const msg = await message.channel.send({ embeds: [embed] });
+      await msg.react("👍");
+      await msg.react("👎");
+      await message.delete();
+    } catch (err) {
+      console.error(err);
+      message.reply("Error creating suggestion.");
+    }
   },
 };
