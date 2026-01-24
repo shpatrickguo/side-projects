@@ -1,26 +1,32 @@
-*config.py
-*.DS_Store
-.ipynb_checkpoints
-venv/
-Python Challenge/solutions.txt
-Python Challenge/Solutions.md
-
-chatgpt_discordbot/.env
-GameStop.sql
-twitter/.env
-*.jpg
-*.png
-*.xml
-*.iml
-.DS_Store
-*.html
-Wisteria/.env
-Wisteria/.env
-Wisteria/discordExport.txt
-*.mov
-*.csv
-.DS_Store
-*.icloud
-.idea/
+# ---- Python bytecode and caches ----
 __pycache__/
-*.pyc
+*.py[cod]
+*.pyo
+*.pyd
+
+# ---- Virtual environments ----
+venv/
+.env/
+.venv/
+env/
+
+# ---- Jupyter Notebook checkpoints ----
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# ---- Logs and temp files ----
+*.log
+*.tmp
+*.bak
+
+# ---- Editor / OS cruft ----
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ---- Local config & secrets (edit as needed) ----
+*.env
+.env.local
+secrets.json
+config.local.*
